@@ -52,13 +52,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void listaPoliticos() {
-        SetupRest.get().getPolitico().enqueue(new Callback<Politico>() {
+        SetupRest.get().getPoliticos().enqueue(new Callback<Politico>() {
             @Override
             public void onResponse(Call<Politico> call, Response<Politico> response) {
                 if (response.isSuccessful()) {
 
                     Politico politico = response.body();
                     ArrayList<Politico> politicos = politico.getPoliticos();
+
                     politicoAdapter.adiciona(politicos);
 
 
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Politico> call, Throwable t) {
-
+                Log.e( " onFaluire: ", t.getMessage());
             }
         });
 

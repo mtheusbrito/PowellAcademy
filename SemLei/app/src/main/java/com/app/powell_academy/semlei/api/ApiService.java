@@ -12,6 +12,10 @@ import retrofit2.http.GET;
 public interface ApiService {
 
 
+  /*  @GET("politicos")
+    Call<Politico> getPolitico();*/
+
+
     @GET("politicos")
-    Call<Politico> getPolitico();
+    Call<Politico> getPoliticos();
 }

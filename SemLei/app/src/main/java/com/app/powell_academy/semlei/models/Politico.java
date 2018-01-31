@@ -1,5 +1,7 @@
 package com.app.powell_academy.semlei.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -8,13 +10,18 @@ import java.util.Calendar;
  */
 
 public class Politico {
-
+    @SerializedName("id")
     private int id;
+    @SerializedName("nome")
     private String nome;
+    @SerializedName("cargo")
     private String cargo;
+    @SerializedName("partido")
     private String partido;
-    private Calendar dataCriacao;
-    private Calendar dataAtualizacao;
+    @SerializedName("dataCriacao")
+    private String dataCriacao;
+    @SerializedName("dataAtualizacao")
+    private String dataAtualizacao;
 
 
     public int getId() {
@@ -25,23 +32,22 @@ public class Politico {
         this.id = id;
     }
 
-    public Calendar getDataCriacao() {
+
+    public String getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(Calendar dataCriacao) {
+    public void setDataCriacao(String dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
-    public Calendar getDataAtualizacao() {
+    public String getDataAtualizacao() {
         return dataAtualizacao;
     }
 
-    public void setDataAtualizacao(Calendar dataAtualizacao) {
+    public void setDataAtualizacao(String dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
     }
-
-
 
     public String getNome() {
         return nome;
@@ -66,8 +72,6 @@ public class Politico {
     public void setPartido(String partido) {
         this.partido = partido;
     }
-
-
 
 
     private ArrayList<Politico> politicos;
