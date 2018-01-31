@@ -8,6 +8,7 @@ import java.util.Calendar;
  */
 
 public class Politico {
+
     private int id;
     private String nome;
     private String cargo;

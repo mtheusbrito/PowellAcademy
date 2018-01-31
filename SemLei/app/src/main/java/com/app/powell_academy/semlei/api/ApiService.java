@@ -13,5 +13,5 @@ public interface ApiService {
 
 
     @GET("politicos")
-    Call<Politico> obterListaPoliticos();
+    Call<Politico> getPolitico();
 }
