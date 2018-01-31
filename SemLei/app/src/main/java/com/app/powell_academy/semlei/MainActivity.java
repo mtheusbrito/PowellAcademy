@@ -10,6 +10,7 @@ import com.app.powell_academy.semlei.adapters.PoliticoAdapter;
 import com.app.powell_academy.semlei.api.ApiService;
 import com.app.powell_academy.semlei.api.SetupRest;
 import com.app.powell_academy.semlei.models.Politico;
+import com.app.powell_academy.semlei.models.Politicos;
 import com.app.powell_academy.semlei.utils.ConstantsUtils;
 
 import java.util.ArrayList;
@@ -52,25 +53,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void listaPoliticos() {
-        SetupRest.get().getPoliticos().enqueue(new Callback<Politico>() {
+        SetupRest.get().getPoliticos().enqueue(new Callback<Politicos>() {
             @Override
-            public void onResponse(Call<Politico> call, Response<Politico> response) {
-                if (response.isSuccessful()) {
-
-                    Politico politico = response.body();
-                    ArrayList<Politico> politicos = politico.getPoliticos();
-
-                    politicoAdapter.adiciona(politicos);
-
-
-                } else {
-                    Log.e(TAG, " onResponse: " + response.errorBody());
-                }
+            public void onResponse(Call<Politicos> call, Response<Politicos> response) {
+                Log.v("","Politicos " + response.body());
             }
 
             @Override
-            public void onFailure(Call<Politico> call, Throwable t) {
-                Log.e( " onFaluire: ", t.getMessage());
+            public void onFailure(Call<Politicos> call, Throwable t) {
+
             }
         });
 

@@ -18,7 +18,7 @@ public class SetupRest {
     private static ApiService REST_CLIENT;
 
     static {
-        level = HttpLoggingInterceptor.Level.NONE;
+        level = HttpLoggingInterceptor.Level.BODY;
         url = ConstantsUtils.BASE_URL;
         setupRestClient();
     }
