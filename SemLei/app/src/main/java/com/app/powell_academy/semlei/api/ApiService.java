@@ -3,6 +3,8 @@ package com.app.powell_academy.semlei.api;
 import com.app.powell_academy.semlei.models.Politico;
 import com.app.powell_academy.semlei.models.Politicos;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -18,5 +20,5 @@ public interface ApiService {
 
 
     @GET("politicos.json")
-    Call<Politicos> getPoliticos();
+    Call<ArrayList<Politico>> getPoliticos();
 }

@@ -10,6 +10,7 @@ import java.util.Calendar;
  */
 
 public class Politico {
+
     @SerializedName("id")
     private int id;
     @SerializedName("nome")
@@ -22,7 +23,6 @@ public class Politico {
     private String dataCriacao;
     @SerializedName("dataAtualizacao")
     private String dataAtualizacao;
-
 
     public int getId() {
         return id;
@@ -73,14 +73,4 @@ public class Politico {
         this.partido = partido;
     }
 
-
-    private ArrayList<Politico> politicos;
-
-    public ArrayList<Politico> getPoliticos() {
-        return politicos;
-    }
-
-    public void setPoliticos(ArrayList<Politico> politicos) {
-        this.politicos = politicos;
-    }
 }

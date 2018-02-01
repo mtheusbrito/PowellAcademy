@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewPoliticos;
     private PoliticoAdapter politicoAdapter;
-    private Retrofit retrofit;
     private String TAG = "Lista Politicos";
+    private ArrayList<Politico> politicos = new ArrayList<>();
 
 
     @Override
@@ -53,14 +53,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void listaPoliticos() {
-        SetupRest.get().getPoliticos().enqueue(new Callback<Politicos>() {
+        SetupRest.get().getPoliticos().enqueue(new Callback<ArrayList<Politico>>() {
             @Override
-            public void onResponse(Call<Politicos> call, Response<Politicos> response) {
-                Log.v("","Politicos " + response.body());
+            public void onResponse(Call<ArrayList<Politico>> call, Response<ArrayList<Politico>> response) {
+                politicos = response.body();
+                politicoAdapter.atualiza(politicos);
             }
 
             @Override
-            public void onFailure(Call<Politicos> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Politico>> call, Throwable t) {
+                //Não tem muito o que fazer...
 
             }
         });

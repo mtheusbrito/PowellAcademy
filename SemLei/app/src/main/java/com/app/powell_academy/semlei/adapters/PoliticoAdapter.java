@@ -58,6 +58,11 @@ public class PoliticoAdapter extends RecyclerView.Adapter<PoliticoAdapter.ViewHo
         return politicos.size();
     }
 
+    public void atualiza(ArrayList<Politico> politicos) {
+        this.politicos = politicos;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView textViewNome, textViewPartido, textViewCargo;
 
