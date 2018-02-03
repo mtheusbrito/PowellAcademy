@@ -48,10 +48,7 @@ public class PoliticoAdapter extends RecyclerView.Adapter<PoliticoAdapter.ViewHo
 
     }
 
-    public void adiciona(ArrayList<Politico> politicos){
-        this.politicos.addAll(politicos);
-        this.notifyDataSetChanged();
-    }
+
 
     @Override
     public int getItemCount() {
